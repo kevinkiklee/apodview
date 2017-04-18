@@ -29,7 +29,7 @@ const Logo = () => {
     <LogoWrapper>
       <img src={logo}
            alt='APoD View Logo'/>
-      <h1>APoD Viewer</h1>
+      <h1>APoD View</h1>
     </LogoWrapper>
   );
 };
