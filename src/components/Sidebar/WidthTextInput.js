@@ -48,16 +48,13 @@ class WidthTextInput extends Component {
 
   componentWillReceiveProps(newProps) {
     if (this.state.width !== newProps.width) {
-      const width = newProps.width.slice(0, newProps.width.length - 2);
-      this.setState({ width });
+      this.setState({ width: newProps.width });
     }
   }
 
   handleSubmit(e) {
     e.preventDefault();
-
-    const widthString = `${this.state.width}px`;
-    this.props.setWidthRequest(widthString);
+    this.props.setWidthRequest(this.state.width);
   }
 
   handleChange(e) {

@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 
 const InformationWrapper = styled.section`
-  height: calc(100vh - 511px);
+  height: calc(100vh - 512px);
   padding: 10px 25px 15px 25px;
   display: flex;
   flex-direction: column;

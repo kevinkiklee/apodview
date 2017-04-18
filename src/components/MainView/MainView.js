@@ -20,7 +20,6 @@ const MainViewWrapper = styled.section`
   }
 
   .videoLink a {
-    margin-top: 50px;
     color: white;
     text-decoration: none;
     font-weight: 800;
@@ -33,13 +32,8 @@ const MainViewWrapper = styled.section`
 `;
 
 class MainView extends Component {
-  isGreaterThan999px(widthString) {
-    if (widthString === '') {
-      return false;
-    }
-
-    const width = widthString.slice(0, widthString.length - 2);
-    return width > 999;
+  isGreaterThan999px(width) {
+    return width === '' ? false : width > 999;
   }
 
   buildImage(url, width) {
@@ -56,6 +50,14 @@ class MainView extends Component {
     );
   }
 
+  buildVideo(url) {
+    return (
+      <div className='videoLink'>
+        <a href={url} target='_blank'>External Video Link</a>
+      </div>
+    );
+  }
+
   render() {
     if (this.props.loading) {
       return (
@@ -69,14 +71,11 @@ class MainView extends Component {
       if (this.props.photoData.media_type === 'image') {
         content = this.buildImage(url, width);
       } else if (this.props.photoData.media_type === 'video') {
-        content =
-          <div className='videoLink'>
-            <a href={url} target='_blank'>External Video Link</a>
-          </div>;
+        content = this.buildVideo(url);
       }
 
       return (
-        <MainViewWrapper width={width}>
+        <MainViewWrapper width={`${width}px`}>
           { content }
         </MainViewWrapper>
       );
