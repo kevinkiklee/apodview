@@ -4,8 +4,6 @@ import { connect } from 'react-redux';
 import styled from 'styled-components';
 import ElementPan from 'react-element-pan';
 
-import { fetchPhotoData } from '../../actions/photoActions';
-
 const MainViewWrapper = styled.section`
   max-width: calc(100% - 300px);
   margin: 0 auto;
@@ -34,10 +32,6 @@ const MainViewWrapper = styled.section`
 `;
 
 class MainView extends Component {
-  constructor(props) {
-    super(props);
-  }
-
   isGreaterThan999px(widthString) {
     if (widthString === '') {
       return false;
@@ -65,7 +59,7 @@ class MainView extends Component {
                     <a href={url} target='_blank'>External Video Link</a>
                   </div>;
       }
-      
+
       let content = (
         <ElementPan width='100%'>
           <img id='photoImg' src={url}/>;

@@ -1,5 +1,4 @@
-import { RECEIVE_PHOTO_DATA,
-         RECEIVE_PHOTO_IMAGE } from '../actions/photoActions.js';
+import { RECEIVE_PHOTO_DATA } from '../actions/photoActions.js';
 
 const initialState = {
   data: null,
