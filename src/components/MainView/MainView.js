@@ -16,6 +16,7 @@ const MainViewWrapper = styled.section`
   .element-pan {
     display: block;
     max-height: 100%;
+    width: 100%;
   }
 
   .videoLink a {
@@ -41,6 +42,20 @@ class MainView extends Component {
     return width > 999;
   }
 
+  buildImage(url, width) {
+    if (this.isGreaterThan999px(width)) {
+      url = this.props.photoData.hdurl;
+    }
+
+    return (
+      <ElementPan>
+        <img id='photoImg'
+             src={url}
+             alt={this.props.photoData.title}/>;
+      </ElementPan>
+    );
+  }
+
   render() {
     if (this.props.loading) {
       return (
@@ -52,13 +67,7 @@ class MainView extends Component {
       let url = this.props.photoData.url;
 
       if (this.props.photoData.media_type === 'image') {
-        if (this.isGreaterThan999px(width)) {
-          url = this.props.photoData.hdurl;
-        }
-        content =
-          <ElementPan width='100%'>
-            <img id='photoImg' src={url}/>;
-          </ElementPan>;
+        content = this.buildImage(url, width);
       } else if (this.props.photoData.media_type === 'video') {
         content =
           <div className='videoLink'>
