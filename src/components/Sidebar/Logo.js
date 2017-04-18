@@ -27,7 +27,8 @@ const LogoWrapper = styled.section`
 const Logo = () => {
   return (
     <LogoWrapper>
-      <img src={logo}/>
+      <img src={logo}
+           alt='APoD View Logo'/>
       <h1>APoD Viewer</h1>
     </LogoWrapper>
   );

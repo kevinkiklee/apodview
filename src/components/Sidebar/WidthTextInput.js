@@ -6,7 +6,7 @@ const WidthTextInputWrapper = styled.section`
 
   justify-content: center;
   align-items: center;
-  margin: 10px;
+  margin: 15px 0px 6px 0px
   color: white;
 
   form {
