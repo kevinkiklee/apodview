@@ -67,7 +67,7 @@ class WidthTextInput extends Component {
   render() {
     return (
       <WidthTextInputWrapper>
-        <h4>Width</h4>
+        <h4>Set Width</h4>
         <form onSubmit={this.handleSubmit}>
             <input placeholder="In pixels"
                    type="text"
