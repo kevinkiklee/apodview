@@ -55,11 +55,6 @@ class MainView extends Component {
     } else {
       const width = this.props.width;
       let url = this.props.photoData.url;
-      let content = (
-        <ElementPan width='100%'>
-          <img id='photoImg' src={url}/>;
-        </ElementPan>
-      );
 
       if (this.props.photoData.media_type === 'image') {
         if (this.isGreaterThan999px(width)) {
@@ -70,6 +65,12 @@ class MainView extends Component {
                     <a href={url} target='_blank'>External Video Link</a>
                   </div>;
       }
+      
+      let content = (
+        <ElementPan width='100%'>
+          <img id='photoImg' src={url}/>;
+        </ElementPan>
+      );
 
       return (
         <MainViewWrapper width={width}>

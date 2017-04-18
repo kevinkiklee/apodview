@@ -7,7 +7,7 @@ import MainView from './MainView/MainView';
 
 import { fetchPhotoData } from '../actions/photoActions';
 
-const ApodWrapper = styled.section`
+const AppWrapper = styled.section`
   display: flex;
   font-family: 'Raleway';
   background-color: black;
@@ -24,7 +24,7 @@ const ApodWrapper = styled.section`
   }
 `;
 
-class Apod extends Component {
+class App extends Component {
   componentDidMount() {
     this.fetchPhoto(this.props.date);
   }
@@ -42,18 +42,18 @@ class Apod extends Component {
   render() {
     if (!this.props.photoData) {
       return (
-        <ApodWrapper>
+        <AppWrapper>
           <div className='loading'>
             Loading APoD Viewer
           </div>
-        </ApodWrapper>
+        </AppWrapper>
       );
     } else {
       return (
-        <ApodWrapper>
+        <AppWrapper>
           <Sidebar/>
           <MainView/>
-        </ApodWrapper>
+        </AppWrapper>
       );
     }
   }
@@ -72,4 +72,4 @@ const mapDispatchToProps = (dispatch, ownProps) => ({
 export default connect(
   mapStateToProps,
   mapDispatchToProps
-)(Apod);
+)(App);
