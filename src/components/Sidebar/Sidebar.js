@@ -10,8 +10,8 @@ import Information from './Information';
 import { setWidthRequest } from '../../actions/requestActions';
 
 const SidebarWrapper = styled.section`
-  height: 100vh;
   width: 300px;
+  height: 100vh;
   border-right: 1px solid white;
 
   h4 {

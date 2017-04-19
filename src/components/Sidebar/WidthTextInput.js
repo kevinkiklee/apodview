@@ -3,9 +3,9 @@ import styled from 'styled-components';
 
 const WidthTextInputWrapper = styled.section`
   display: flex;
-
   justify-content: center;
   align-items: center;
+
   margin: 15px 0px 6px 0px
   color: white;
 
@@ -22,8 +22,8 @@ const WidthTextInputWrapper = styled.section`
   }
 
   input[type='submit'] {
-    border: 1px solid #aaccff;
     background-color: #aaccff;
+    border: 1px solid #aaccff;
     cursor: pointer;
     transition: all 0.3s ease 0s;
   }

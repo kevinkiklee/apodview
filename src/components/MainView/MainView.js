@@ -5,25 +5,25 @@ import styled from 'styled-components';
 import ElementPan from 'react-element-pan';
 
 const MainViewWrapper = styled.section`
-  max-width: calc(100% - 300px);
-  margin: 0 auto;
+  max-width: calc(100vw - 300px);
   height: 100vh;
+  display: flex;
   overflow: hidden;
 
-  display: flex;
+  margin: 0 auto;
   align-items: center;
 
   .element-pan {
-    display: block;
-    max-height: 100%;
     width: 100%;
+    max-height: 100%;
+    display: block;
   }
 
   .videoLink a {
     color: white;
-    text-decoration: none;
-    font-weight: 800;
     font-size: 20px;
+    font-weight: 800;
+    text-decoration: none;
   }
 
   img {

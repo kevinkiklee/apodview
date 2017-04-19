@@ -9,15 +9,17 @@ import { fetchPhotoData } from '../actions/photoActions';
 
 const AppWrapper = styled.section`
   display: flex;
-  font-family: 'Raleway';
   background-color: black;
+  font-family: 'Raleway';
 
   .loading {
     width: 100vw;
     height: 100vh;
+
     display: flex;
     justify-content: center;
     align-items: center;
+    
     color: white;
     font-weight: 800;
     font-size: 30px;

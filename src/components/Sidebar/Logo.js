@@ -4,8 +4,9 @@ import styled from 'styled-components';
 import logo from '../../assets/nasa-logo.png';
 
 const LogoWrapper = styled.section`
-  height: 130px;
   width: 300px;
+  height: 130px;
+
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -17,10 +18,10 @@ const LogoWrapper = styled.section`
 
   h1 {
     color: white;
+    margin-top: 15px;
     font-size: 25px;
     font-weight: 900;
     letter-spacing: 1px;
-    margin-top: 15px;
   }
 `;
 
