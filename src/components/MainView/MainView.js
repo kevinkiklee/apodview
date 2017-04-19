@@ -21,7 +21,7 @@ const MainViewWrapper = styled.section`
 
   .videoLink a {
     color: white;
-    font-size: 20px;
+    font-size: 30px;
     font-weight: 800;
     text-decoration: none;
   }

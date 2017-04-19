@@ -19,7 +19,7 @@ const AppWrapper = styled.section`
     display: flex;
     justify-content: center;
     align-items: center;
-    
+
     color: white;
     font-weight: 800;
     font-size: 30px;
