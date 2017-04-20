@@ -2,8 +2,10 @@ import React, { Component } from 'react';
 import styled from 'styled-components';
 import { connect } from 'react-redux';
 
+
 import Sidebar from './Sidebar/Sidebar';
 import MainView from './MainView/MainView';
+import spinner from '../assets/loading.svg';
 
 import { fetchPhotoData } from '../actions/photoActions';
 
@@ -19,10 +21,15 @@ const AppWrapper = styled.section`
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-direction: column;
 
     color: white;
-    font-weight: 800;
+    font-weight: 400;
     font-size: 30px;
+  }
+
+  .spinner {
+    padding: 10px;
   }
 `;
 
@@ -46,6 +53,9 @@ class App extends Component {
       return (
         <AppWrapper>
           <div className='loading'>
+            <img className='spinner'
+                 src={spinner}
+                 alt='Loading Spinner' />
             Loading APoD Viewer
           </div>
         </AppWrapper>
