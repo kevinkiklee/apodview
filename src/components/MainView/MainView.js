@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
-import spinner from '../../assets/loading.svg';
-
 import styled from 'styled-components';
+
 import Image from './Image';
 import Video from './Video';
+import Spinner from './Spinner';
 
 const MainViewWrapper = styled.section`
   max-width: calc(100vw - 300px);
@@ -77,14 +77,7 @@ class MainView extends Component {
   }
 
   buildSpinner() {
-    return (
-      <div className='loading'>
-        <img className='spinner'
-             src={spinner}
-             alt='Loading Spinner' />
-        Loading Image
-      </div>
-    );
+    return <Spinner />;
   }
 
   render() {
