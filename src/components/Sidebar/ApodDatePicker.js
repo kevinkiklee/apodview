@@ -12,29 +12,6 @@ const DatePickerWrapper = styled.section`
   display: flex;
   justify-content: center;
   align-items: center;
-
-  .react-datepicker {
-    background-color: black;
-  }
-
-  .react-datepicker__header {
-    background-color: #111;
-    color: white;
-  }
-
-  .react-datepicker__current-month {
-    color: white;
-    margin-bottom: 10px;
-  }
-
-  .react-datepicker__day,
-  .react-datepicker__day-name, {
-    color: white;
-  }
-
-  .react-datepicker__day--disabled {
-    color: #353535;
-  }
 `;
 
 class ApodDatePicker extends Component {
