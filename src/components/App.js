@@ -16,19 +16,7 @@ const AppWrapper = styled.section`
   .loading {
     width: 100vw;
     height: 100vh;
-
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-
-    color: white;
-    font-weight: 400;
-    font-size: 20px;
-  }
-
-  .spinner {
-    padding: 10px;
+    background-color: black;
   }
 `;
 
@@ -51,12 +39,7 @@ class App extends Component {
     if (!this.props.photoData) {
       return (
         <AppWrapper>
-          <div className='loading'>
-            <img className='spinner'
-                 src={spinner}
-                 alt='Loading Spinner' />
-            Loading APoD Viewer
-          </div>
+          <div className='loading' />
         </AppWrapper>
       );
     } else {

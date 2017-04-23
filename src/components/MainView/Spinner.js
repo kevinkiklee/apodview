@@ -7,6 +7,11 @@ const SpinnerWrapper = styled.section`
   width: calc(100vw - 301px) !important;
   height: 100% !important;
 
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+
   position: absolute;
   top: 0px;
   bottom: 0px;
@@ -18,6 +23,7 @@ const SpinnerWrapper = styled.section`
   color: white;
 
   img {
+    padding: 15px;
     width: 40px !important;
   }
 `;
