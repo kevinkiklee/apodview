@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import styled from 'styled-components';
 import { connect } from 'react-redux';
 
-
 import Sidebar from './Sidebar/Sidebar';
 import MainView from './MainView/MainView';
 import spinner from '../assets/loading.svg';
@@ -25,7 +24,7 @@ const AppWrapper = styled.section`
 
     color: white;
     font-weight: 400;
-    font-size: 30px;
+    font-size: 20px;
   }
 
   .spinner {

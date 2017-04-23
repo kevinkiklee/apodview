@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
+import spinner from '../../assets/loading.svg';
+
 import styled from 'styled-components';
 import ElementPan from 'react-element-pan';
 
@@ -32,8 +34,23 @@ const MainViewWrapper = styled.section`
 `;
 
 class MainView extends Component {
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      imageLoaded: true
+    };
+
+    this.handleImageLoad = this.handleImageLoad.bind(this);
+    this.buildContent = this.buildContent.bind(this);
+  }
+
   isGreaterThan999px(width) {
     return width === '' ? false : width > 999;
+  }
+
+  handleImageLoad(e) {
+    this.setState({ imageLoaded: true });
   }
 
   buildImage(url, width) {
@@ -45,7 +62,8 @@ class MainView extends Component {
       <ElementPan>
         <img id='photoImg'
              src={url}
-             alt={this.props.photoData.title}/>;
+             alt={this.props.photoData.title}
+             onLoad={this.handleImageLoad}/>;
       </ElementPan>
     );
   }
@@ -58,28 +76,40 @@ class MainView extends Component {
     );
   }
 
-  render() {
-    if (this.props.loading) {
-      return (
-        <div className='loading'>Loading Image</div>
-      );
-    } else {
-      let content;
-      const width = this.props.width;
-      let url = this.props.photoData.url;
+  buildContent() {
+    let content;
+    const width = this.props.width;
+    let url = this.props.photoData.url;
 
-      if (this.props.photoData.media_type === 'image') {
-        content = this.buildImage(url, width);
-      } else if (this.props.photoData.media_type === 'video') {
-        content = this.buildVideo(url);
-      }
-
-      return (
-        <MainViewWrapper width={`${width}px`}>
-          { content }
-        </MainViewWrapper>
-      );
+    if (this.props.photoData.media_type === 'image') {
+      content = this.buildImage(url, width);
+    } else if (this.props.photoData.media_type === 'video') {
+      content = this.buildVideo(url);
     }
+
+    return content;
+  }
+
+  buildSpinner() {
+    return (
+      <div className='loading'>
+        <img className='spinner'
+             src={spinner}
+             alt='Loading Spinner' />
+        Loading Image
+      </div>
+    );
+  }
+
+  render() {
+    const content = this.buildContent();
+    const spinner = this.buildSpinner();
+
+    return (
+      <MainViewWrapper width={`${this.props.width}px`}>
+        { this.state.imageLoaded ? content : spinner }
+      </MainViewWrapper>
+    );
   }
 }
 
