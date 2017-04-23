@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 import spinner from '../../assets/loading.svg';
 
 import styled from 'styled-components';
-import ElementPan from 'react-element-pan';
+import Image from './Image';
 
 const MainViewWrapper = styled.section`
   max-width: calc(100vw - 300px);
@@ -41,7 +41,6 @@ class MainView extends Component {
       imageLoaded: true
     };
 
-    this.handleImageLoad = this.handleImageLoad.bind(this);
     this.buildContent = this.buildContent.bind(this);
   }
 
@@ -49,23 +48,13 @@ class MainView extends Component {
     return width === '' ? false : width > 999;
   }
 
-  handleImageLoad(e) {
-    this.setState({ imageLoaded: true });
-  }
-
   buildImage(url, width) {
     if (this.isGreaterThan999px(width)) {
       url = this.props.photoData.hdurl;
     }
 
-    return (
-      <ElementPan>
-        <img id='photoImg'
-             src={url}
-             alt={this.props.photoData.title}
-             onLoad={this.handleImageLoad}/>;
-      </ElementPan>
-    );
+    return <Image src={url}
+                  alt={this.props.photoData.title}/>;
   }
 
   buildVideo(url) {
