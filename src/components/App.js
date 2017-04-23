@@ -4,7 +4,6 @@ import { connect } from 'react-redux';
 
 import Sidebar from './Sidebar/Sidebar';
 import MainView from './MainView/MainView';
-import spinner from '../assets/loading.svg';
 
 import { fetchPhotoData } from '../actions/photoActions';
 
