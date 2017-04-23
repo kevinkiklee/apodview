@@ -5,6 +5,7 @@ import spinner from '../../assets/loading.svg';
 
 import styled from 'styled-components';
 import Image from './Image';
+import Video from './Video';
 
 const MainViewWrapper = styled.section`
   max-width: calc(100vw - 300px);
@@ -58,11 +59,7 @@ class MainView extends Component {
   }
 
   buildVideo(url) {
-    return (
-      <div className='videoLink'>
-        <a href={url} target='_blank'>External Video Link</a>
-      </div>
-    );
+    return <Video url={url}/>;
   }
 
   buildContent() {
