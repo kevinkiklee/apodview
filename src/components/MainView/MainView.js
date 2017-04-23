@@ -5,7 +5,6 @@ import styled from 'styled-components';
 
 import Image from './Image';
 import Video from './Video';
-import Spinner from './Spinner';
 
 const MainViewWrapper = styled.section`
   max-width: calc(100vw - 300px);
@@ -35,16 +34,6 @@ const MainViewWrapper = styled.section`
 `;
 
 class MainView extends Component {
-  constructor(props) {
-    super(props);
-
-    this.state = {
-      imageLoaded: true
-    };
-
-    this.buildContent = this.buildContent.bind(this);
-  }
-
   isGreaterThan999px(width) {
     return width === '' ? false : width > 999;
   }
@@ -76,17 +65,10 @@ class MainView extends Component {
     return content;
   }
 
-  buildSpinner() {
-    return <Spinner />;
-  }
-
   render() {
-    const content = this.buildContent();
-    const spinner = this.buildSpinner();
-
     return (
       <MainViewWrapper width={`${this.props.width}px`}>
-        { this.state.imageLoaded ? content : spinner }
+        { this.buildContent() }
       </MainViewWrapper>
     );
   }
@@ -94,7 +76,6 @@ class MainView extends Component {
 
 const mapStateToProps = (state, ownProps) => ({
   photoData: state.photo.data,
-  loading: state.loading.photoData,
   date: state.request.date,
   width: state.request.width,
 });
