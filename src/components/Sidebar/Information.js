@@ -11,7 +11,7 @@ const InformationWrapper = styled.section`
 
   color: white;
   background-color: rgba(0, 0, 0, 0.8);
-  
+
   text-align: left;
 
   .title {
@@ -40,6 +40,23 @@ const InformationWrapper = styled.section`
 
     font-size: 13px;
     line-height: 1.3;
+  }
+
+  .explanation::-webkit-scrollbar-track
+  {
+  	border: 1px solid black;
+  	background-color: #F5F5F5;
+  }
+
+  .explanation::-webkit-scrollbar
+  {
+  	width: 10px;
+  	background-color: #F5F5F5;
+  }
+
+  .explanation::-webkit-scrollbar-thumb
+  {
+  	background-color: #151515;
   }
 `;
 
