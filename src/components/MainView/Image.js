@@ -22,11 +22,7 @@ class Image extends Component {
   }
 
   render() {
-    let spinner = '';
-
-    if (!this.state.imageLoaded) {
-      spinner = <Spinner />;
-    }
+    const spinner = this.state.imageLoaded ? '' : <Spinner />;
 
     return (
       <ElementPan>
