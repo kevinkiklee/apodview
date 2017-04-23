@@ -1,6 +1,6 @@
 {
   "name": "apodview",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "NASA Astronomy Picture of the Day Viewer",
   "private": true,
   "dependencies": {
@@ -11,7 +11,6 @@
     "react-dom": "^15.5.4",
     "react-element-pan": "^1.0.9",
     "react-redux": "^5.0.4",
-    "react-youtube": "^7.4.0",
     "redux": "^3.6.0",
     "redux-logger": "^3.0.1",
     "redux-thunk": "^2.2.0",
