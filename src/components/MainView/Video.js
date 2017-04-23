@@ -1,10 +1,18 @@
 import React from 'react';
+import styled from 'styled-components';
+
+const VideoWrapper = styled.section`
+  iframe {
+    width: calc(100vw - 300px);
+    height: 100vh;
+  }
+`;
 
 const Video = ({ url }) => {
   return (
-    <div className='videoLink'>
-      <a href={url} target='_blank'>External Video Link</a>
-    </div>
+    <VideoWrapper>
+      <iframe src={url}/>
+    </VideoWrapper>
   );
 };
 
